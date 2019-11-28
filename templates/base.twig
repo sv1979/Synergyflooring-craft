@@ -1,0 +1,32 @@
+{% set metaTitle = 'Synergy Flooring' %}
+{% if pageTitle is defined %}
+	{% set metaTitle = metaTitle ~ ' | ' ~ pageTitle %}
+{% endif %}
+
+{% set metaDescription = 'Synergy Flooring' %}
+{% if pageDescription is defined %}
+	{% set metaDescription = pageDescription %}
+{% endif %}
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{% do view.registerCssFile("@web/assets/dist/app.css") %}
+		<title>{{metaTitle}}</title>
+		<meta name="description" content="{{metaDescription}}">
+	</head>
+	<body data-aos-easing="ease" data-aos-duration="600" data-aos-delay="0">
+		<div class="site-wrap">
+			{% include('parts/header') %}
+
+			{% block content %}{% endblock %}
+			{% block subcontent %}{% endblock %}
+			{% block subcontent2 %}{% endblock %}
+
+			{% include('parts/footer') %}
+		</div>
+		{% do view.registerJsFile("@web/assets/dist/app.js") %}
+	</body>
+</html>
