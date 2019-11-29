@@ -19,13 +19,16 @@
 	</head>
 	<body data-aos-easing="ease" data-aos-duration="600" data-aos-delay="0">
 		<div class="site-wrap">
-			{% include('parts/header') %}
+			{% include('parts/mobile-menu') %}
+			<div class="push-wrap">
+				{% include('parts/header') %}
 
-			{% block content %}{% endblock %}
-			{% block subcontent %}{% endblock %}
-			{% block subcontent2 %}{% endblock %}
-
-			{% include('parts/footer') %}
+				{% block content %}{% endblock %}
+				{% block subcontent %}{% endblock %}
+				{% block subcontent2 %}{% endblock %}
+		
+				{% include('parts/footer') %}
+			</div>
 		</div>
 		{% do view.registerJsFile("@web/assets/dist/app.js") %}
 	</body>

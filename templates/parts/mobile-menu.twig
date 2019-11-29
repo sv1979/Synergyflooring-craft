@@ -1,0 +1,8 @@
+<div id="body-nav" class="mobile-menu">
+	<div class="mobile-wrapper">
+		{{ craft.olivemenus.getMenuHTML('topMenu',{ 
+                'menu-id': 'mobile_menu',
+                'ul-class': 'mobile_menu_container'}) }}
+		<a class="phone" href="tel:{{ globalData.phoneNumber|replace(' ', '') }}">{{ globalData.phoneNumber }}</a>
+	</div>
+</div>
