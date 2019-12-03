@@ -1,0 +1,13 @@
+<div class="breadcrumb-border">
+	<ul class="breadcrumb">
+		<li><a href="{{ siteUrl }}">Home</a></li>
+        <li>|</li>
+        {% if linkChain is defined and linkChain|length > 0 %}
+            {% for onelink in linkChain %}
+                <li><a href="{{ onelink.linkUrl }}">{{ onelink.linkText }}</a></li>
+                <li>|</li>
+                {% endfor %}
+        {% endif %}
+		<li>{{ entryTitle }}</li>
+	</ul>
+</div>

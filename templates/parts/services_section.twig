@@ -1,0 +1,21 @@
+<div class="pt-10 pb-10">
+	<div class="lg-container aos-init aos-animate" data-aos="fade-up">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="heading">Our Services</h2>
+			</div>
+			{% for cs in services %}
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="service-container">
+						<h3>{{cs.header|striptags}}</h3>
+						<p>{{cs.introText}}</p>
+						<a class="read-more" href="{{cs.url}}">Read more</a>
+					</div>
+				</div>
+			{% endfor %}
+			<div class="col-12">
+				<a href="/services" class="outline-btn black service">View all services</a>
+			</div>
+		</div>
+	</div>
+</div>

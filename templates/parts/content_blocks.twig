@@ -1,0 +1,43 @@
+<div class="pt-10 pb-10">
+	<div class="lg-container">
+		{% for oneblock in content_blocks %}
+
+			{% set blockImage = oneblock.blockImage.one().url|default('http://placeimg.com/640/480/tech') %}
+			{% if oneblock.imagePosition == 'left' %}
+				<div class="row about-feature">
+					<div class="col-12 col-lg-6 aos-init aos-animate" data-aos="fade-right">
+						<img src="{{blockImage}}" alt="{{oneblock.heading}}">
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="about-text">
+							<h1>{{oneblock.heading}}</h1>
+							{{oneblock.contentText}}
+							{% if oneblock.linkDestination|length %}
+								<a class="outline-btn black-fade" href="{{oneblock.linkDestination.one.url()}}">
+									{{oneblock.linkText|default('Read More')}}
+								</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% elseif oneblock.imagePosition == 'right' %}
+				<div class="row about-feature">
+					<div class="col-12 col-lg-6 order-lg-2">
+						<img src="{{blockImage}}" alt="{{oneblock.heading}}" data-aos="fade-left" class="aos-init aos-animate">
+					</div>
+					<div class="col-12 col-lg-6 order-lg-1">
+						<div class="about-text lg-right">
+							<h1>{{oneblock.heading}}</h1>
+							{{oneblock.contentText}}
+							{% if oneblock.linkDestination|length %}
+								<a class="outline-btn black-fade" href="{{oneblock.linkDestination.one.url()}}">
+									{{oneblock.linkText|default('Read More')}}
+								</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

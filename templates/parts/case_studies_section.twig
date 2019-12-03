@@ -1,0 +1,25 @@
+<div class="pt-10 pb-10 grey">
+	<div class="lg-container">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="heading">Case Studies</h2>
+			</div>
+			<div class="col-12">
+				<a href="/case-studies" class="outline-btn black case">view all case studies</a>
+            </div>
+            {% for cs in case_studies %}
+
+                {% set csImage = cs.thumbnailImage.one().url|default('http://placeimg.com/640/480/tech') %}
+
+                <div class="col-12 col-lg-4">
+                    <a class="case-study" href="{{cs.url}}">
+                        <div class="sq-img-container">
+                            <div class="sq-image" style="background-image: url({{csImage}})"></div>
+                        </div>
+                        <p class="img-title">{{cs.header|striptags}}</p>
+                    </a>
+                </div>
+            {% endfor %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="pt-10 pb-10 blue">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-heading">
+					<h2 class="heading white">{{header}}</h2>
+					<p class="blurb">{{content|striptags}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="client-container aos-init aos-animate" data-aos="fade-up">
+        {% for logo in logos %}
+            {% set logoImage = logo.url() %}
+            <div class="brand-logo" style="background-image:url({{logoImage}})"></div>
+        {% endfor %}
+	</div>
+</div>

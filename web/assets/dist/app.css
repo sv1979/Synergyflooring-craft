@@ -12491,6 +12491,9 @@ form .right {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 @media only screen and (min-width: 640px) {
@@ -13342,6 +13345,10 @@ footer .footer-logos img {
   margin: 0 auto;
   display: -webkit-box;
   display: flex;
+}
+
+.breadcrumb a {
+  color: #707070;
 }
 
 @media only screen and (min-width: 1400px) {

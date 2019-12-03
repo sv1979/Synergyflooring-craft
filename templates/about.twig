@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+{% set headerImage = entry.headerImage.one().url|default('http://placeimg.com/640/480/tech') %}
+
+{% block content %}
+
+{% include('parts/header_image') with {
+    'image': headerImage,
+    'wording' : entry.header|striptags('<br>')|raw
+} %}
+
+{% include('parts/breadcrumbs') with { 'entryTitle': entry.title }%}
+
+{% include('parts/content_blocks') with {'content_blocks':entry.contentBlock.all() } %}
+
+{% endblock %}
